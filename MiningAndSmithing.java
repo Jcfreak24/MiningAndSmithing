@@ -126,7 +126,7 @@ public class MiningAndSmithing extends JFrame implements ActionListener
 			{
 				try
 				{
-					out = new PrintWriter("MiningAndSmithing.txt");
+					out = new PrintWriter("MiningAndSmithingSave.txt");
 					out.println(miningLevel);
 					out.println(smeltingLevel);
 					out.println(cash);
@@ -150,16 +150,20 @@ public class MiningAndSmithing extends JFrame implements ActionListener
 		}
 		else if(event.getSource() == mine)
 		{
+			// Mine newMine = new Mine(level);
 			miningLevel++;
 			miningLevelLabel.setText("Mining Level: " + miningLevel);
 		}
 		else if(event.getSource() == smelt)
 		{
+			// Smelt newSmelt = new Smelt(level);
 			smeltingLevel++;
 			smeltingLevelLabel.setText("Smelting Level: " + smeltingLevel);
 		}
 		else if(event.getSource() == buy)
 		{
+			// Buy newBuy = new Buy(cash);
+			
 			if(cash >= 1)
 			{
 				cash--;
@@ -172,6 +176,9 @@ public class MiningAndSmithing extends JFrame implements ActionListener
 		}
 		else if(event.getSource() == sell)
 		{
+			// Sell newSell = new Sell(ores);
+			
+			
 			if(ores.size() > 0)
 			{
 				cash++;
@@ -190,7 +197,7 @@ public class MiningAndSmithing extends JFrame implements ActionListener
     	{
     		try
     		{
-    			in = new Scanner(new File("MiningAndSmithing.txt"));
+    			in = new Scanner(new File("MiningAndSmithingSave.txt"));
     			miningLevel = Integer.parseInt(in.nextLine());
 				smeltingLevel = Integer.parseInt(in.nextLine());
 				cash = Double.parseDouble(in.nextLine());
@@ -214,7 +221,7 @@ public class MiningAndSmithing extends JFrame implements ActionListener
     	gui.setVisible(true);
     	
     	/*Scanner scan = new Scanner(System.in);
-    	Scanner in = new Scanner(new File("MiningAndSmithing.txt"));
+    	Scanner in = new Scanner(new File("MiningAndSmithingSave.txt"));
 		
 		miningLevel = Integer.parseInt(in.nextLine());
 		smithingLevel = Integer.parseInt(in.nextLine());
@@ -233,7 +240,7 @@ public class MiningAndSmithing extends JFrame implements ActionListener
 			
 			if(thing.equals("Quit"))
 			{
-				PrintWriter out = new PrintWriter("MiningAndSmithing.txt");
+				PrintWriter out = new PrintWriter("MiningAndSmithingSave.txt");
 				out.println(miningLevel);
 				out.println(smithingLevel);
 				out.println(cash);
