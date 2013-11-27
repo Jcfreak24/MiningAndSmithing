@@ -6,6 +6,7 @@ import java.awt.event.*;
 
 // Will have a level for each as well as money. Can either buy or mine ore, smelt it, and then sell it for money.
 // Should make this have a gui to be more user-friendly.
+// Ian is also working on this!!!
 
 public class MiningAndSmithing extends JFrame implements ActionListener
 {
